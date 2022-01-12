@@ -1,0 +1,43 @@
+import sqlite3
+##Then create a connection using connect() and pass db name as argument. if db exists, it opens else it will create it.
+sqliteconnection = sqlite3.connect('dbname')
+print("connected to db")
+
+##after this cursor object is called to be capable to send commands to sql
+cursor = sqlconnection.cursor()
+
+###creating sql commands
+sql_command = """ CREATE TABLE emp(staff_num Integer PRIMARY KEY, FNAME VARCHAR(20),....)"""  ##insert or alter or create then it needed to be commited
+
+##execute sql statement
+cursor.execute(sql_command)
+
+##to save changes in db
+sqlconnection.commit()
+
+#close connection
+connection.close()
+
+
+
+import mysql.connector
+connect = mysql.connector.connect(user ='root',password='',host='127.0.0.1',datbase=test1)
+cursor = connect.cursor(dictionary =True)    ## for fetching array        connect.cursor(db.cursor.Dictcursor)  --##as mysql_fetch_object   connect.cursor() ---usuall
+sql_query= ("SELECT * FROM users WHERE id>0")
+cursor.execute(sql_query)
+results =cursor.fetchall()
+print(results)
+
+
+
+
+
+
+
+
+sql questions
+ 1.Sql dump command
+'''mysqldump -u root -p namedb [tablenamr]> [dumpfilename.sql]'''
+'''mysqldump -u[username] root[options] -p[password] namedb[databasename] [tablename]> [dumpfilename.sql]'''
+u -username
+p-password

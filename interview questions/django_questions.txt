@@ -1,0 +1,296 @@
+I
+1.How to Get or View all the items in a model?
+Users.objects.all()
+
+2. How to Filter Items in a model?
+users.objects.filter(item__='')
+
+3.How to get particular item in model?
+Users.objects.get(id=12)
+
+4.what is command to create super user in Django?
+
+5.whatis django query to view a database schema of an existing (or a legacy) database?
+python manage.py inspectdb
+
+6.what is command for migrations?
+
+7.How to insert /update/delete an object using queryset in django?
+Users.objects.filter(id=54).delete()   <--delete
+
+user_to_be_modify = Users.objects.get(pk=3)   <--update
+user_to_be_modify.city = "pune"
+user_to_be_modify.save()
+
+new_user = User(name="Name",......)    <---insert
+new_user.save()
+
+8.what is command to install django and to know abt its version ?
+ 
+9.what is the command to run a project in Django?
+
+10. How do you combine multiple querysets in a view?
+
+11.what is the command to create a project & app in Django?
+
+
+Question what is annotate and aggregate?Explain the difference?
+for finding the max, min, count, sum of values in a field/column.we can opertate when mostly fields are integers, date etc.,
+
+Aggregate - operation of sum, min without groupby
+Annotate - operation with groupby at table.ID
+
+
+
+II Mostly
+
+1. what is the difference between select related and prefetch related?
+
+2.what is the default database in Django?
+sqlite
+
+3. Explain how a request is processed in Django?
+
+4. why django is called as a loosely coupled framework?
+because it works on model view template(MVT) Architecture, which is a variant of MVC. Django models and views take care of server side and data queery operations where Templates such as HTML and CSS whis just need data from server. since these components are independent of each other it makes Django loosely coupled Framework.
+
+
+5.what is csrf token?
+a-cross site request forgery, csrf attackers allows malicious user to exceute actions as another user without his consent.
+b-Django has builtin protection in csrf attacks, provided we enabled and used it.
+c-csrf uses a secret in each POST request. it ensure malicious user cannot post on another user post form. malicious user should have to know a secret which is stored in cookie which is unique to each user
+d-csrf-exempt decorator to exempt csrftoken
+
+6.Default port for Django development server?
+8000
+
+7.Explain how you can setup Database in Django?
+
+
+
+8.Explain Migration in Django?
+whenever we make changes in our model, instead of writing sql queries in DB, to update DB. Through Migrations, which generates sql query command file. 
+migrate runs those commands for us in DB schema.
+
+
+9.what is Django ORM?
+
+
+
+10.which companies uses Django?
+Instagram, Mozilla
+
+
+
+11.what is the difference betweeen a project and app in Django. explain in detail?
+		An single project consists of number of apps. an app is web application, with specific requirement  
+
+Files created when Django project created are:-
+a.manage.py  -- A command line utiity
+b.__init__.py --An empty file that tells python that the current directory should be considered as pyhton package.
+c.settings.py   --settings for the current project
+d. urls.py   --URL's for the current project
+e.wsgi.py    --Entry-point for the web servers to serve the project you have created.
+
+Files created when Django project created are:-
+a. __init__.py   --provides the same functionality as project. empty file serves as to denote as package.
+b. app.py   ---admin.py used to register models and creating superuser
+c. admin.py    -- this file is used for configuration of app. users can configure their attributes of their app. which is rarely done as because default configuration is enough miostly.
+d. views.py  --it is an important part of Django project, views provides user with interactes to interact with Django web application. It consists of views in the form all classes or functions.
+
+	serves the purpose of encapsulation,i.e., logic, reads data from database and delgates to templates. usuallly returns either http response or http404
+
+e. tests.py  --tests.py allows user to write test code to test the working of the test app.
+f. models.py  -- it consists of essential field and behaviours.Each model will map to single specific table in database. they are sub class of django.db.models.Model.
+g. Templates ---- renders information to the user, can generate html dynamically.
+		consists of both static and dynamic.
+		can have multiple of them or none of them. 
+
+12. What is Difference between Users.objects.filter(), Users.objects.get() and Users.objects.all() in Django Queryset?
+
+
+
+13.Difference between Django, Flask and Pyramid?
+
+
+
+14.How static files are defined in Django? Explain its configuration and uses?
+{% load static %}
+	purpose - static files seres the purpose of additional files such as images, css files or javascript 
+	stored in static named directory of project app directory
+
+15.what is queryset in Django?
+
+16.Expalin Django Architecture? Explain Template,Models,views & urls?
+its works on MVT Architecture, which is based on MVC(model view controller).In django, Django itself deals with controller part. 
+views are specified call back functions, for specified urls, and these callback functions specifiy which data is presented. views basically describes the data represented to the user, it does not deal with how actually data looks, but what the rather data is. 
+templated deals with presentation of data and thereby separating content from presentation.
+
+
+
+common q
+
+1.Advantages/Disadvantages of using Django?
+
+2.Expalin Django admin?
+Django admin is the command-line utility for Django administravtive tasks 
+django-admin version
+django-admin makemigrations
+django-admin migrate
+django-admin runserver
+
+
+3.Explain Q objects in Django ORM?
+
+4.what Datbases are supported by Django?
+
+5.what are Django exceptions and how to handle it?
+
+6.what is Django shortcut method to more easily render an html response?
+render_to_response
+
+7.what is significance of manage.py file?
+command line utility.
+    It puts your project’s package on sys.path.
+    It sets the DJANGO_SETTING_MODULE environment variable to points to your project’s setting.py file.
+    It is also an extension point where you can access custom commands you write yourself that are specific to your apps.
+
+8.what is difference between authentication & authorization?
+
+9.what does {% include %} means?
+ include tag loads a template and renders it with the current context. This is a way of “including” other templates within a template.
+
+{% extends %}
+extends templates tag inherits templates but also with variables in it.
+
+Question What is Dajngo template?
+	A Django template is text document or python string marked up using django template language. Django being powerful batteries allows us to render the data from view to data, 
+	but also provides some features such as variables, loops,comments and extends etc.,
+
+10. what is use of include function in urls.py function in Django?
+
+11. what is Django.shortcuts.render function do?
+
+12.Explain Django RestFramework?
+
+13.what are middlewares in Django? How to create custom Middleware.
+middleware is framework of hooks into Django request/response processing. It's light, low level plugin system for globally altering the input and output.
+	middleware is a middle ground between request and response. when a request is made it moves to views through middleware and data as response send through middleware.
+
+14.what is sessions in Django?
+
+15.what are signals in Django? what are the types?
+
+16.what is context in Django?
+
+
+
+
+ Advanced Questions
+
+
+1. why does Django use regular expressions to deffine URLs?Is it necessary to use them?
+
+2.what happens if Users.objects.get() and Users.objects.filter() are called with parametters that do not match an existing item in the database?
+
+3.Diff between Django onetoneField & ForeignKey Field?
+
+4.How to make variable availabe to all the templates?
+
+5. how can you use file based sessions?
+
+6. what is serialization in Django?
+
+7.what are generic Views?
+
+8.what is Mixin?
+It is special multiple inheritance. it used in 2 situations where 
+	one class has multiple features
+	other is one particular feature in multiple classes
+
+
+9.Explain Django Field class and its types?
+
+10.what is jinja templating?
+
+11.Explain the caching strategies in the Django?
+
+12. Inheritance styles in Django?
+	a.Abstract base class:  used when you want to use parent class to hold information   ---- Reastaurent(model.Model)
+	b.Multi table model inheritance : used when you have to subclass an existing model -----Pizza(Restaurent)
+	c. Proxy models : Used only if you want to modify the python-level behaviour of a model.  base class should not be abstract class. 
+	main purpose is to overwrite the mainfunctionalities of existing model.
+
+
+
+1.What are features of django?
+Django is SEO(search engine optimised) 
+it is fully is fast and fully loaded Framework along with authentication, content adminsitration and rss feed
+it is very secure, avoid cross siteforgeries, clickjacking  
+Django is scalable, handle heavy website
+it is verstaile tio handle anykind of websites
+
+2. Advantages of Django?
+Django is loosely coupled
+very less code
+Quick development
+Follows Dont Repeat yourself(DRY) principle
+consistent at lower and higher levels
+Behavious are explicitly specified
+sql statements are not execute too many time
+can easily drop into raw sql
+Flwxibility using URL's
+
+
+3.Why caching is required? what are types of caching?
+	For dynamic websites, rendering templates, we often need data from vaarious sources like db, 3rd party API. any delays can be reflected on user's side. 
+
+Types of caching:(built in)
+1.Memcached       ---is a memory based, key-value store for small chunks of data.
+			It supports distributed cache across multiple servers.
+2.Database        ---cache fragments are stored in DB. A table for that purpose can defined by Django admin commands. 
+			It is not used mostly, but can be useful in storing complex database queries.
+3.File system     ----this is saved on the file system, in separate files for each value. 
+			it is easiest to setup in production but slowest
+4.Local Memory    ----Local Memory cache, which is best suited for local development or testing environments. 
+			while its fast as MEM cached but not scalabe beyond single server. 
+			Not appropriate to use as data cache for any app tha uses more than one server
+5.Dummy           ---- A Dummy cache that does not actually cache anything but still implements the cache interface. 
+			It's used in development or testing when you don't want caching, but do not wish to change code.
+
+Caching levels
+1.per-site cache
+2.per-view cache
+3.Template fragment cache
+4.Low-level cache API
+
+
+
+what is API
+An APi is a set of deffinitions and protocols for building and integrating applications. it is sometimes reffered as contract between information provider and information user.
+in other words, if you want to interact with a computer to retrieve information or perform action, an API can helps you communicate what you want to that system so it can understand and ful fill request.
+
+
+what is REST?
+Representational state transfer(REST) is a set of architectural constraints, not a protocol or standards.
+when a client request is made via RESTful API, it transfers a representation of the state of the resource to the endpoint. this information is delivered in one of the several formats via HTTP
+	through JSON or XML.	
+
+
+
+what makes an API RESTful API?
+a. A client server architecture made up of clients, servers and resource with requests managed through HTTP.
+b. Stateless client -server communication, meaning no client information is stored between get requests is separate and unconnected.
+c.Cacheable data that streamlines client server interactions.
+d.A uniform interface between components so that information is transferred in a standard form. this requires
+	*)resources requested are identifiable and separate from the representations sent to the client.
+	*)resources can be manipulated by the client via representation they recieve because the representaion to do so.
+	*)self-descriptive messages returned to the client have enough information to describe how the client should process it.
+	*)hypertext/hypermedia is availbale, meaning that after accessing a resource the client should be able to us hyperlinks to find all opther currently available actions they can take.
+e.A layered system that organises each type of server(those responsible for security, load-balancing etc.,) involved the retrieval of requested information into hierarchies, invisible to the client.
+f.Code on demand(optional):the ability to send executable code from the server to the client when requested, extending client functionality.
+
+
+REST API and SOAP API?
+Though REST API has criteria to conform to, it is still considered easier to use than prescribed protocol like Simple Object Access Protocol (SOAP).
+which has specific requirements like XML messaging and built-in security and transaction compliance that make it slower and heavier.

@@ -1,0 +1,45 @@
+bot recognised?
+1.use IP Rotation, through proxy servers and vpn to send requests through series of different IP addresses
+2. use google cloud or App Engine platform IP's, website owners think it is GoogleBot
+3.Set additional Request Headers
+4.set a referrer
+5. Learn to scrape slowly like human: Addd in random sleep Delays and actions
+6.Pursue Different Scraping patterns, addition to skim slowly human goes through website uniquely. adding some random clicks and events to make scraper more human.
+
+
+driver.close() --closes particular window, webdriver currently working on.
+driver.quit()  ---this command closess all the windows opened by program.
+
+exception test in selenium  --an exception test is a test that expects an exception to be thrown inside a test class. 
+	it expects a @Test annotation followed by expected exception name in the brackets.
+
+navigation commands of selenium
+a. navigate().back()
+b.navigate().forward()
+c. navigate().refresh()
+d. navigate().to()   -- this command used for navigating aa particular URL in a new web browser. it take URL, to be migrated, as PArameter.
+
+dynamic changes in data 
+
+difficult websites
+news website
+
+beautifoup and selenium used where
+  
+useragents
+
+chrontab
+
+logs and how
+
+python logs
+
+
+testing - elements
+
+
+
+
+
+
+i
