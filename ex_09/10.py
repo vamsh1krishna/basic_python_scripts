@@ -1,0 +1,8 @@
+ln = list()
+ln.append('stephen.marquard@uct.ac.za')
+ln.append('louis@media.berkeley.edu')
+ln.append('gsilver@umich.edu')
+ln.append('gopal.ramasammycook@gmail.com')
+#print(ln)
+ln.split('@')
+print(ln)
