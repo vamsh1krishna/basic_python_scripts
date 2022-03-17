@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 venv
 .pyc
 __pycache__
 .pytest_cache
 .vscode/
+=======
+effective_python/session2_pytest/__pycache__/picnic.cpython-39.pyc
+effective_python/session2_pytest/__pycache__/sample.cpython-39.pyc
+effective_python/session2_pytest/__pycache__/test_picnic.cpython-39-pytest-7.0.1.pyc
+effective_python/session2_pytest/__pycache__/test_sample.cpython-39-pytest-7.0.1.pyc
+>>>>>>> f279dcc6b33e9e425d4a759cd3a21b40647a1f2e
